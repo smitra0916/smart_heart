@@ -1,7 +1,10 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// ignore: unused_import
+import 'dart:async';
+
 import 'package:firebase_core/firebase_core.dart';
-// import 'package:flutter/cupertino.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+// import 'package:flutter/cupertino.dart';
 // import 'package:flutter/widgets.dart';
 // import 'package:http/http.dart' as http;
 // import 'dart:convert';
@@ -56,22 +59,23 @@ class _MyHomePageState extends State<MyHomePage> {
     fetchData();
   }
 
-  void fetchData() async {
-    DocumentSnapshot snapshot = await FirebaseFirestore.instance
-        .collection('Patients')
-        .doc('dGuo1yzC2ciSvzLGo37p')
-        .get();
-    Map<String, dynamic> data = snapshot.data() as Map<String, dynamic>;
+void fetchData() {
+  final dbRef = FirebaseDatabase.instance.ref().child("Patients/Patient1");
+  dbRef.once().then((DatabaseEvent snapshot) {
+    Map<dynamic, dynamic> values = snapshot.snapshot.value as Map<dynamic, dynamic>;
+    // print('Fetched data: $values'); // Print the fetched data
     setState(() {
-      name = data['Name'];
-      sex = data['Sex'];
-      age = data['Age'];
-      pulse = data['Pulse'];
-      spo2 = data['SPO2'];
-      cbg = data['CBG'];
-      bp = data['BP'];
+      name = values['Name'];
+      sex = values['Sex'];
+      age = values['Age'];
+      pulse = values['Pulse'];
+      spo2 = values['SPO2'];
+      cbg = values['CBG'];
+      bp = values['BP'];
     });
-  }
+    // print('Updated data: $name, $sex, $age, $pulse, $spo2, $cbg, $bp');
+  });
+}
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Row(
                   children: [
                     Text(
-                      "${sex}\t",
+                      "$sex\t",
                       style: const TextStyle(fontSize: 20),
                     ),
                     Text(age.toString(), style: const TextStyle(fontSize: 20))
