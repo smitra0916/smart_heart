@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "790940087690",
+    "project_id": "smart-heart-6946f",
+    "storage_bucket": "smart-heart-6946f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790940087690:android:0646a73c1b8c6605e34473",
+        "android_client_info": {
+          "package_name": "com.example.smart_heart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLx_GlAy58-ji8O1vrmnnOggPl1FjTy-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
