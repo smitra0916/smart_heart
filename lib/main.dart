@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Row(
                   children: [
                     Text(
-                      sex.toString(),
+                      "${sex}\t",
                       style: const TextStyle(fontSize: 20),
                     ),
                     Text(age.toString(), style: const TextStyle(fontSize: 20))
