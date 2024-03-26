@@ -77,102 +77,102 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.only(top: 100.0, left: 20),
+        padding: const EdgeInsets.only(top: 200.0, left: 20),
         child: Column(children: <Widget>[
           Row(children: <Widget>[
-            CircleAvatar(
+            const CircleAvatar(
               radius: 90,
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
             Column(
               children: [
                 Row(
                   children: [
-                    Text(
+                    const Text(
                       'NAME: ',
                       style: TextStyle(fontSize: 20),
                     ),
-                    Text(name, style: TextStyle(fontSize: 20))
+                    Text(name, style: const TextStyle(fontSize: 20))
                   ],
                 ),
                 Row(
                   children: [
                     Text(
                       sex.toString(),
-                      style: TextStyle(fontSize: 20),
+                      style: const TextStyle(fontSize: 20),
                     ),
-                    Text(age.toString(), style: TextStyle(fontSize: 20))
+                    Text(age.toString(), style: const TextStyle(fontSize: 20))
                   ],
                 )
               ],
             ),
           ]),
           Padding(
-            padding: EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(40.0),
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(top: 20),
                   child: Row(
                     children: [
-                      Icon(Icons.monitor_heart_rounded),
-                      Text(
+                      const Icon(Icons.monitor_heart_rounded),
+                      const Text(
                         'PULSE:',
                         style: TextStyle(fontSize: 15),
                       ),
                       Text(
                         pulse.toString(),
-                        style: TextStyle(fontSize: 15),
+                        style: const TextStyle(fontSize: 15),
                       )
                     ],
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(top: 20),
                   child: Row(
                     children: [
-                      Icon(Icons.monitor_heart_rounded),
-                      Text(
+                      const Icon(Icons.monitor_heart_rounded),
+                      const Text(
                         'SPO2:',
                         style: TextStyle(fontSize: 15),
                       ),
                       Text(
                         spo2.toString(),
-                        style: TextStyle(fontSize: 15),
+                        style: const TextStyle(fontSize: 15),
                       )
                     ],
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(top: 20),
                   child: Row(
                     children: [
-                      Icon(Icons.monitor_heart_rounded),
-                      Text(
+                      const Icon(Icons.monitor_heart_rounded),
+                      const Text(
                         'CBG:',
                         style: TextStyle(fontSize: 15),
                       ),
                       Text(
                         cbg.toString(),
-                        style: TextStyle(fontSize: 15),
+                        style: const TextStyle(fontSize: 15),
                       )
                     ],
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(top: 20),
                   child: Row(
                     children: [
-                      Icon(Icons.monitor_heart_rounded),
-                      Text(
+                      const Icon(Icons.monitor_heart_rounded),
+                      const Text(
                         'BP:',
                         style: TextStyle(fontSize: 15),
                       ),
                       Text(
                         bp,
-                        style: TextStyle(fontSize: 15),
+                        style: const TextStyle(fontSize: 15),
                       )
                     ],
                   ),
