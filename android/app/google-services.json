@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "790940087690",
-    "project_id": "smart-heart-6946f",
-    "storage_bucket": "smart-heart-6946f.appspot.com"
+    "project_number": "923939231417",
+    "firebase_url": "https://espsmartheart-default-rtdb.firebaseio.com",
+    "project_id": "espsmartheart",
+    "storage_bucket": "espsmartheart.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:790940087690:android:0646a73c1b8c6605e34473",
+        "mobilesdk_app_id": "1:923939231417:android:228146f20d3b699a13ad68",
         "android_client_info": {
           "package_name": "com.example.smart_heart"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCLx_GlAy58-ji8O1vrmnnOggPl1FjTy-c"
+          "current_key": "AIzaSyArHcCkMehcq-yWtiRponZZeacpPLG5cO8"
         }
       ],
       "services": {

@@ -1,4 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// ignore_for_file: avoid_print, unnecessary_brace_in_string_interps, unused_element
+
+import 'package:firebase_database/firebase_database.dart'; // Add this line
 import 'package:firebase_core/firebase_core.dart';
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -55,23 +57,31 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     fetchData();
   }
-
-  void fetchData() async {
-    DocumentSnapshot snapshot = await FirebaseFirestore.instance
-        .collection('Patients')
-        .doc('dGuo1yzC2ciSvzLGo37p')
-        .get();
-    Map<String, dynamic> data = snapshot.data() as Map<String, dynamic>;
-    setState(() {
-      name = data['Name'];
-      sex = data['Sex'];
-      age = data['Age'];
-      pulse = data['Pulse'];
-      spo2 = data['SPO2'];
-      cbg = data['CBG'];
-      bp = data['BP'];
-    });
+void updatePatientData(Map<dynamic, dynamic> data) {
+  setState(() {
+    name = data['name'];
+    sex = data['sex'];
+    age = data['age'];
+    pulse = data['pulse'];
+    spo2 = data['spo2'];
+    cbg = data['cbg'];
+    bp = data['bp'];
+  });
   }
+  void fetchData() async {
+  try {
+    final ref = FirebaseDatabase.instance.ref().child('Patients/dGuo1yzC2ciSvzLGo37p');
+    final snapshot = await ref.get();
+    if (snapshot.exists) {
+      updatePatientData(snapshot.value as Map<dynamic, dynamic>);
+    } else {
+      print('No data available.');
+    }
+  } on FirebaseException catch (e) {
+    print('Error fetching data: $e');
+  }
+}
+
 
   @override
   Widget build(BuildContext context) {
